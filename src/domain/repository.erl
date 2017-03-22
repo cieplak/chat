@@ -5,4 +5,4 @@
 
 -spec save(message, message()) -> {ok, message()} | {error, list(<<>>)}.
 save(message, Message) ->
-  {ok, Message}.
+  messages:save(Message).
