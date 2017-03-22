@@ -2,7 +2,7 @@
 
 Simple chat web service (`/src`) and web app (`/www`).
 
-## Deploying
+## Deploying the Chat Service
 
 On FreeBSD (depends on GNU Make):
 
@@ -26,6 +26,18 @@ make run
 
 Once the chat service is running, reverse proxy to it and register your CNAME :) .
 
+## Packaging the Client HTML/JS
+
+```
+cd chat/www
+npm install
+make
+cd /tmp/build
+python -m SimpleHTTPServer
+```
+
+When ready, serve via CDN.
+
 ## Enjoying
 
-Navigate your browser to `https://localhost:8443` and invite other folks to do the same.
+Navigate your browser to `http://localhost:8000` and invite other folks to do the same.

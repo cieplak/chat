@@ -1,13 +1,13 @@
 BUILD=/tmp/build
 
 package:
-	mkdir -p $(BUILD) || echo $(BUILD) directory exists
+	mkdir -p $(BUILD)  || echo $(BUILD) directory exists
 	mkdir $(BUILD)/css || echo $(BUILD)/css directory exists
-	mkdir $(BUILD)/js || echo $(BUILD)/js directory exists
+	mkdir $(BUILD)/js  || echo $(BUILD)/js directory exists
 	mkdir $(BUILD)/js/codemirror || echo $(BUILD)/js/codemirror directory exists
 
 	node_modules/rollup/bin/rollup src/js/index.js --output   $(BUILD)/js/index.js
-	sed -i.bak 's/export default main;/var app = main();/' $(BUILD)/js/index.js
+	sed -i.bak 's/export default main;/var app = main();/'    $(BUILD)/js/index.js
 	rm $(BUILD)/js/index.js.bak
 
 	cp -a lib/fonts        $(BUILD)/.
@@ -16,7 +16,6 @@ package:
 
 	cp lib/js/*                                                      $(BUILD)/js/.
 	cp lib/css/*                                                     $(BUILD)/css/.
-	cp -a node_modules/jquery-ui/themes/base/*                       $(BUILD)/css/.
 
 	cp node_modules/axios/dist/axios.js                              $(BUILD)/js/.
 	cp node_modules/axios/dist/axios.min.map                         $(BUILD)/js/axios.map
@@ -37,5 +36,5 @@ package:
 	cp node_modules/handsontable/dist/pikaday/pikaday.css            $(BUILD)/css/.
 	cp node_modules/handsontable/dist/handsontable.full.css          $(BUILD)/css/.
 	cp node_modules/codemirror/lib/codemirror.css                    $(BUILD)/css/.
-	cp node_modules/codemirror/theme/monokai.css                    $(BUILD)/css/.
-	cp node_modules/codemirror/theme/solarized.css                    $(BUILD)/css/.
+	cp node_modules/codemirror/theme/monokai.css                     $(BUILD)/css/.
+	cp node_modules/codemirror/theme/solarized.css                   $(BUILD)/css/.

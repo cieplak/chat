@@ -17,12 +17,13 @@ App.prototype.div = function(value) {
 
 App.prototype.render = function() {
     var editorDiv = d3.select('#editor').node();
-    this.editor      = new Editor().div(editorDiv).render();
+    this.editor = new Editor().div(editorDiv).render();
     this.editor.evaluator(function(code) { eval(code); });
     var editor = this.editor;
     this.keybindings.bind('e e', function(e) {
         editor.eval();
         return false;
     });
+    d3.select('#play').on('click', function() { editor.eval(); });
     return this;
 };

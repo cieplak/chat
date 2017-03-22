@@ -1,18 +1,18 @@
 @font-face {
     font-family: 'Crimson Text';
-    src: url('fonts/crimson-roman.woff2') format('woff2'),
-    url('fonts/crimson-roman.woff') format('woff');
+    src: url('/fonts/crimson-roman.woff2') format('woff2'),
+    url('/fonts/crimson-roman.woff') format('woff');
 }
 
 @font-face {
     font-family: 'Roboto';
-    src: url('fonts/Roboto-Regular.woff2') format('woff2'),
-    url('fonts/Roboto-Regular.woff') format('woff');
+    src: url('/fonts/Roboto-Regular.woff2') format('woff2'),
+    url('/fonts/Roboto-Regular.woff') format('woff');
 }
 
 @font-face {
     font-family: 'Inconsolata';
-    src: url('fonts/inconsolata.woff') format('woff');
+    src: url('/fonts/inconsolata.woff') format('woff');
 }
 
 body {
@@ -151,4 +151,9 @@ body {
     background-color: #333333;
     color: #c4c4c4;
     border-color: darkcyan;
+}
+
+#play {
+    float: right;
+
 }
